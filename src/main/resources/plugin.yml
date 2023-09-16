@@ -1,0 +1,4 @@
+name: test
+version: '${project.version}'
+main: com.limified.test.Test
+api-version: '1.20'
