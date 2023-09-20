@@ -1,4 +1,4 @@
-package com.limified.test;
+package com.limified.logs;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -128,7 +128,7 @@ public class eventmanager implements Listener {
     public void PlayerBedLeaveEvent(PlayerBedLeaveEvent e) {
         try {
             if (moves) {
-                Test.writetologs(e.getPlayer().getName()+" left bed "+e.getBed(),"moves",e.getPlayer().getName());
+                Main.writetologs(e.getPlayer().getName()+" left bed "+e.getBed(),"moves",e.getPlayer().getName());
             }
         } catch (Exception Ex) {
             System.out.println("please report this to the developer of this plugin");
@@ -144,7 +144,7 @@ public class eventmanager implements Listener {
     public void PlayerBucketFillEvent(PlayerBucketFillEvent e) {
         try {
             if (items) {
-                Test.writetologs(e.getPlayer().getName()+" filled a bucket: "+e.getBucket(), "items", e.getPlayer().getName());
+                Main.writetologs(e.getPlayer().getName()+" filled a bucket: "+e.getBucket(), "items", e.getPlayer().getName());
             }
         } catch (Exception Ex) {
             System.out.println("report this issue to the developer of this plugin");
@@ -154,13 +154,14 @@ public class eventmanager implements Listener {
     @EventHandler
     public void PlayerBucketEmptyEvent(PlayerBucketEmptyEvent e) {
         if (items) {
-            Test.writetologs(e.getPlayer().getName()+ " has emptied their bucket: "+e.getBucket(),"items",e.getPlayer().getName());
+            Main.writetologs(e.getPlayer().getName()+ " has emptied their bucket: "+e.getBucket(),"items",e.getPlayer().getName());
         }
     }
     @EventHandler
     public void PlayerBedEnterEvent(PlayerBedEnterEvent e) {
         if (moves) {
-            Test.writetologs(e.getPlayer().getName()+ " has left their bed: "+e.getBed()+" located at "+e.getBed().getLocation(),"moves",e.getPlayer().getName());
+            Main.writetologs(e.getPlayer().getName()+ " has left their bed: "+e.getBed()+" located at "+e.getBed().getLocation(),"moves",e.getPlayer().getName());
         }
     }
+
 }

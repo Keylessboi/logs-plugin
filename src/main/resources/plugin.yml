@@ -1,4 +1,4 @@
-name: test
+name: Loggerified
 version: '${project.version}'
-main: com.limified.test.Test
+main: com.limified.logs.Main
 api-version: '1.20'
